@@ -16,5 +16,10 @@ describe('DistanceCalculator', () => {
       calculator.setTargetLocation([3, 4])
       expect(calculator.getDistance()).toEqual(5)
     })
+
+    it('should return 10 when TargetLocation = [8,6]', () => {
+      calculator.setTargetLocation([8, 6])
+      expect(calculator.getDistance()).toEqual(10)
+    })
   })
 })
