@@ -31,5 +31,17 @@ describe('DistanceCalculator', () => {
       calculator.setTargetLocation([8, 6])
       expect(calculator.getDistance()).toEqual(10)
     })
+
+    it('should return 13 when TargetLocation = [8,6] and my gps location = [-4,11]', () => {
+      calculator.setTargetLocation([8, 6])
+      const gpsService = {
+        getCoords: function () {
+          return [-4, 11]
+        }
+      }
+      calculator.setGpsService(gpsService)
+
+      expect(calculator.getDistance()).toEqual(13)
+    })
   })
 })
