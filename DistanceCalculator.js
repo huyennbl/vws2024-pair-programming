@@ -3,6 +3,10 @@ export default class DistanceCalculator {
     this.coords = coords
   }
 
+  getDistance () {
+    return 5
+  }
+
   getMyLocation () {
     return [0, 0]
   }
