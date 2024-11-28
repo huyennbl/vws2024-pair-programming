@@ -3,6 +3,10 @@ export default class DistanceCalculator {
     this.coords = coords
   }
 
+  setGpsService (gpsService) {
+    this.gpsService = gpsService
+  }
+
   getDistance () {
     const [x, y] = this.coords
     return Math.sqrt(
@@ -11,6 +15,7 @@ export default class DistanceCalculator {
   }
 
   getMyLocation () {
-    return [0, 0]
+    if (!this.gpsService) return [0, 0]
+    return this.gpsService.getCoords()
   }
 }
