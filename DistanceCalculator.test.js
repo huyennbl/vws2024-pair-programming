@@ -8,6 +8,15 @@ describe('DistanceCalculator', () => {
     it('should return [0,0]', () => {
       expect(calculator.getMyLocation()).toEqual([0, 0])
     })
+    it('should return data from GpsService', () => {
+      const gpsService = {
+        getCoords: function () {
+          return [3, 2]
+        }
+      }
+      calculator.setGpsService(gpsService)
+      expect(calculator.getMyLocation()).toEqual([3, 2])
+    })
   })
   describe('getDistance()', () => {
     it('should return 5 when TargetLocation = [3,4]', () => {
