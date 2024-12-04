@@ -4,6 +4,9 @@ export default class DistanceCalculator {
   }
 
   getDistance (targetLocation) {
-    return 5
+    const [x, y] = targetLocation
+    return Math.sqrt(
+      Math.pow(x, 2) + Math.pow(y, 2)
+    )
   }
 }
