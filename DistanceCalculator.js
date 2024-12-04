@@ -10,8 +10,9 @@ export default class DistanceCalculator {
 
   getDistance (targetLocation) {
     const [x, y] = targetLocation
+    const [gpsX, gpsY] = this.getMyLocation()
     return Math.sqrt(
-      Math.pow(x, 2) + Math.pow(y, 2)
+      Math.pow(x - gpsX, 2) + Math.pow(y - gpsY, 2)
     )
   }
 }
