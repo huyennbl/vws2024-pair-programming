@@ -1,6 +1,11 @@
 export default class DistanceCalculator {
+  setGpsService (gpsService) {
+    this.gpsService = gpsService
+  }
+
   getMyLocation () {
-    return [0, 0]
+    if (!this.gpsService) return [0, 0]
+    return this.gpsService.getCoords()
   }
 
   getDistance (targetLocation) {
